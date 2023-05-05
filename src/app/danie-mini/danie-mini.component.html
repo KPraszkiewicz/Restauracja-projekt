@@ -1,0 +1,29 @@
+<div class="danie_mini ">
+    <div class="card "  [ngClass]="{najdrozsze: danie.cena == max_cena, najtansze: danie.cena == min_cena}" style="width: 100%;">
+        <img [src]="'assets/obr/' + danie.obrazy[0] + '.jpg'" class="card-img-top" [alt]="danie.nazwa" (click)="pokaz_szczegoly()">
+        <div class="card-body">
+            <h5 class="card-title">{{danie.nazwa | uppercase}}</h5>
+            <div class="pasek">
+                <span class="badge text-bg-primary">{{danie.typ | uppercase}}</span>
+                <span class="badge text-bg-success">{{danie.kategoria | uppercase}}</span>
+                <span class="badge text-bg-danger" *ngIf="danie.dostepnosc<=3">OSTATNIE SZTUKI</span>
+            </div>
+            <gwiazdki [ocena]="danie.ocena" [ilosc_ocen]="danie.ilosc_ocen"></gwiazdki>
+            <p class="card-text">{{danie.opis}}</p>
+           
+
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="align-middle fs-3">{{danie.cena}} $</div>
+                <div class="btn-group">
+                    <button  class="btn btn-primary" (click)="bOdejmij()" [disabled]="danie.ilosc == 0" [ngClass]="{'btn-outline-primary':danie.ilosc == 0}">-</button>
+                    <button class="btn btn-outline-primary" disabled>{{danie.ilosc}}</button>
+                    <button  class="btn btn-primary" (click)="bDodaj()" [disabled]="danie.ilosc == danie.dostepnosc" [ngClass]="{'btn-outline-primary':danie.ilosc == danie.dostepnosc}">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="card-body" [style.background-color]="(danie.popularnosc >= 10)? '':'orange'" [ngClass]="{'bg-primary text-white': (danie.popularnosc >= 10)}">Popularność: {{danie.popularnosc}} zarezerwowanych dań</div>
+        <div class="admin card-footer" *ngIf="auth.sprawdz_role('admin')">
+            <button class="btn btn-danger" (click)="usun()">Usuń</button>
+        </div>
+    </div>
+</div>

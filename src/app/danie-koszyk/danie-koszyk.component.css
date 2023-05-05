@@ -1,0 +1,16 @@
+.danie-koszyk
+{
+    height: 60px;
+    border-bottom: 1px solid gray;
+    padding-left: 10px;
+    padding-right: 0;
+} 
+.danie-koszyk>*
+{
+    margin-right: 10px;
+}
+.obr-koszyk{
+    height: 55px;
+    width: 70px;
+    object-fit: cover;
+}

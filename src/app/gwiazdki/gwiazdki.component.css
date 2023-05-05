@@ -1,0 +1,29 @@
+.gwiazdy{
+    position: relative;
+}
+.male {
+    transform: scale(0.7) translateX(-21.5%);
+}
+.gwiazdy .akt{
+    position: absolute;
+    top:0;
+}
+.gwiazdy .akt>div{
+    
+    width: 24px;
+    height: 24px;
+    box-sizing: border-box;
+    float: left;
+}
+.gwiazdy svg{
+    
+    color:gold;
+}
+.gwiazdy:hover svg{
+    color:gold;
+}
+.oceny {
+    user-select: none;
+    color: gray;
+    text-decoration: underline #aaaaaa solid ;
+}

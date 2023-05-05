@@ -1,0 +1,14 @@
+.komentarz{
+    position: relative;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.komentarz .iks{
+    position: absolute;
+}
+
+h4>span{
+    font-size: 15px;
+}

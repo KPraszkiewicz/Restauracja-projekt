@@ -1,0 +1,6 @@
+<div class="container-fluid komentarz" *ngIf="kom.tytul">
+    <h4>{{kom.nick}} <span class="data"> {{kom.data}}</span></h4>
+    <gwiazdki [ocena]="kom.ocena" [male]="true" [pokaz_tekst]="false" *ngIf="kom.ocena > 0"></gwiazdki>
+    <h5>{{kom.tytul}} </h5>
+    <pre>{{kom.opis}}</pre>
+</div>

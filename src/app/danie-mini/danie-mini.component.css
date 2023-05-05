@@ -1,0 +1,37 @@
+.gwiazdy svg{
+    color:gold;
+}
+.gwiazdy:hover svg{
+    color:gold;
+}
+.danie_mini {
+    width: 400px;
+    margin: 20px;
+}
+
+.danie_mini img {
+    cursor: pointer;
+}
+
+.badge {
+    margin: 3px;
+}
+
+.najdrozsze {
+    box-shadow: 0 0 20px green;
+}
+
+.najtansze{
+    box-shadow: 0 0 20px red;
+}
+
+.admin {}
+@media screen and (max-width: 750px) {
+    .danie_mini{
+        width: calc(100% - 40px);
+    }
+}
+
+.btn-group {
+    font-family: monospace;
+}

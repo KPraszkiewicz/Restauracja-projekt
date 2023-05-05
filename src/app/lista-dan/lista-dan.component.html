@@ -1,0 +1,19 @@
+<div class="d-flex flex-wrap justify-content-around">
+    <danie-mini *ngFor="let x of dania; let i = index;" 
+        [index]="i"
+        [danie]="x"
+        [max_cena]="max_cena"
+        [min_cena]="min_cena"
+    >
+    </danie-mini>
+</div>
+<div class="pagi">
+    Strona: 
+    <div class="btn-group">
+        <button  class="btn btn-primary" (click)="pop_strona()" [disabled]="strona == 0">{{'<'}}</button>
+        <button class="btn btn-outline-primary" disabled>{{strona + 1}}</button>
+        <button class="btn btn-outline-primary" disabled style="width: 35px;">{{'/ '}} </button>
+        <button class="btn btn-outline-primary" disabled>{{ilosc_stron}}</button>
+        <button  class="btn btn-primary" (click)="nast_strona()" [disabled]="strona >= ilosc_stron - 1">{{'>'}}</button>
+    </div>
+</div>

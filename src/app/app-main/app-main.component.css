@@ -1,0 +1,14 @@
+.main{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+lista-dan{
+    width: 100%;
+}
+@media screen and (max-width: 750px) {
+    .main{
+        display: flex;
+        flex-direction: column;
+    }
+}

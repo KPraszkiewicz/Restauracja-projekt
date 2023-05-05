@@ -1,0 +1,57 @@
+<div  *ngIf="danie">
+    <div class="container-fluid row main">
+        <div class="col">
+            <div [ngClass]="{modal:modal}" (click)="click_modal($event,2)" >
+                <div (click)="click_modal($event,1)">
+                    <svg *ngIf="modal" (click)="click_modal($event,2)" xmlns="http://www.w3.org/2000/svg" width="25"
+                        height="25" fill="currentColor" class=" iks" viewBox="0 0 16 16">
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                    </svg>
+                    <ngb-carousel>
+                        <ng-template ngbSlide *ngFor="let obr of danie.obrazy">
+                            <div class="picsum-img-wrapper">
+                                <picture>
+                                    <source [srcset]="'assets/obr/' + obr + '.jpg'"
+                                            media="(max-width:1200px)">
+                                    <img [src]="'assets/obr/' + obr + '_max.jpg'" alt="">
+                                </picture>
+                                <!--<img [src]="'assets/obr/' + obr + '_max.jpg'" alt="" />-->
+                            </div>
+                        </ng-template>
+                    </ngb-carousel>
+                </div>
+            </div>
+    
+        </div>
+        <div class="col">
+            <h5 class="card-title">{{danie.nazwa | uppercase}}</h5>
+            <div>
+                <gwiazdki [ocena]="danie.ocena" [ilosc_ocen]="danie.ilosc_ocen"></gwiazdki>
+            </div>
+    
+            <p class="card-text">{{danie.opis}}</p>
+            <p>Kuchnia: <span class="badge text-bg-primary">{{danie.typ | uppercase}}</span></p>
+            <p>Kategoria: <span class="badge text-bg-success">{{danie.kategoria | uppercase}}</span></p>
+            <p>Składniki:</p>
+            <ul>
+                <li *ngFor="let s of danie.skladniki">{{s}}</li>
+            </ul>
+    
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="align-middle fs-3">{{danie.cena}} $</div>
+    
+            </div>
+        </div>
+    </div>
+    <div *ngIf="auth.jest_zalogowany()">
+        <div class="komentarze-form container-fluid">
+            Oceń: <gwiazdki [ocena]="danie.ocena"  [ocenianie]="true" (ocen)="ocen($event)"></gwiazdki>  
+            
+        </div>
+        <komentarze-form [idd]="id"></komentarze-form>
+    </div>
+    <div class="container-fluid">
+        <komentarz *ngFor="let kom of komentarze" [kom]="kom"></komentarz>
+    </div>
+</div>

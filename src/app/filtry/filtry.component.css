@@ -1,0 +1,45 @@
+.filtry {
+    width: 300px;
+    padding: 20px;
+    background-color: honeydew;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    top: 0;
+    position: sticky;
+}
+.filtr {
+    margin-bottom: 20px;
+}
+@media screen and (max-width: 750px) {
+    .filtry {
+        width: 100%;
+        flex-direction: row;
+        position: static;
+    }
+    .filtr {
+        margin-right: 20px;
+    }
+}
+
+.filtr .tytul{
+    margin-bottom: 5px;
+}
+.filtr .tytul::after{
+    content: ":";
+}
+.filtry input[type="text"]{
+    width: 100px;
+    height: 27px;
+}
+.filtry select{
+    height: 27px;
+}
+.filtry input[type="checkbox"]{
+    height: 16px;
+    width: 16px;
+}
+
+.filtry p {
+    margin: 3px;
+}

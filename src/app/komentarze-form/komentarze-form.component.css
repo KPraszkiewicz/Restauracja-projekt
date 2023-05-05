@@ -1,0 +1,12 @@
+button {
+    margin: 10px;
+}
+
+.polowa {
+    width: 50%;
+    min-width: 400px;
+}
+
+.data {
+    width: 200px;
+}

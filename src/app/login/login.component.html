@@ -1,0 +1,18 @@
+<form [formGroup]="myform" (ngSubmit)="onlogin()">
+
+    <div class="form-group ">
+        <label>Login</label>
+        <input type="text" class="form-control" 
+            formControlName="login">
+    </div>
+    <br>
+    <div class="form-group ">
+        <label>Hasło</label>
+        <input type="password" class="form-control" 
+            formControlName="haslo">
+    </div>
+    <br>
+    <button class="btn btn-primary">Zaloguj się</button>
+</form>
+<br>
+<a routerLink='/rejestracja'>Nie masz konta? Zarejestruj się</a>

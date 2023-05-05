@@ -1,0 +1,25 @@
+<div class="main container-fluid">
+    <form [formGroup]="myform" (ngSubmit)="onSubmit()">
+
+        <div class="form-group polowa">
+            <label>Nick</label>
+            <input type="text" class="form-control" formControlName="nick">
+        </div>
+
+        <div class="form-group polowa">
+            <label>Tytuł</label>
+            <input type="text" class="form-control" formControlName="tytul">
+        </div>
+        <div class="form-group">
+            <label>Opis</label>
+            <textarea class="form-control" cols="30" rows="4" formControlName="opis"></textarea>
+        </div>
+        <div class="form-group data">
+            <label>Data</label>
+            <input type="Date" class="form-control" formControlName="data" value="20.04.2000">
+        </div>
+        <button type="submit" class="btn btn-primary">Dodaj</button>
+        <button class="btn btn-primary" (click)="reset()">Reset</button>
+    </form>
+    <pre hidden>{{myform.value | json}}</pre>
+</div>

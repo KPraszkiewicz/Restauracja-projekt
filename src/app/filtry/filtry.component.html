@@ -1,0 +1,37 @@
+<div class="filtry position-sticky">
+    <div class="filtr">
+        <div class="tytul">Cena</div>
+        <div class="opcje cena">
+            <input type="text"  placeholder="od" [value]="cena_od_lim " (change)="zm_cena_od($event)"> - 
+            <input type="text"  placeholder="do" [value]="cena_do_lim "  (change)="zm_cena_do($event)">
+        </div>
+    </div>
+    <div class="filtr">
+        <div class="tytul">Typ kuchni</div>
+        <div class="opcje">
+            <select (change)="zm_typ($event)">
+                <option value="">--wszystkie--</option>
+            <option *ngFor="let t of typy" [value]="t">{{t}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="filtr">
+        <div class="tytul">Kategoria</div>
+        <select (change)="zm_kategoria($event)">
+            <option value="">--wszystkie--</option>
+            <option *ngFor="let k of kategorie" [value]="k">{{k}}</option>
+        </select>
+    </div>
+    <div class="filtr">
+        <div class="tytul">Ocena</div>
+        <div class="opcje cena">
+            <p><input type="checkbox" (change)="zm_gwiazdki_5($event)"> 5 gwiazdek</p>
+            <p><input type="checkbox" (change)="zm_gwiazdki_4($event)"> 4 gwiazdki</p>
+            <p><input type="checkbox" (change)="zm_gwiazdki_3($event)"> 3 gwiazdki</p>
+            <p><input type="checkbox" (change)="zm_gwiazdki_2($event)"> 2 gwiazdki</p>
+            <p><input type="checkbox" (change)="zm_gwiazdki_1($event)"> 1 gwiazdka</p>
+            <p><input type="checkbox" (change)="zm_gwiazdki_0($event)"> brak ocen</p>
+        </div>
+    </div>
+    
+</div>
